@@ -38,55 +38,56 @@
     <ProjectName>OTB_VS2017</ProjectName>
     <ProjectGuid>{9DBAC0E2-FF56-4C4B-A337-07FE1DEBCCF2}</ProjectGuid>
     <RootNamespace>OTB</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseU|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseU|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugU|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugU|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -202,9 +203,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" ..\..\..\bin
-copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
-</Command>
+      <Command>mkdir "$(ProjectDir)..\..\..\bin"
+mkdir "$(ProjectDir)..\..\lib"
+xcopy /Y /S /D "$(TargetPath)" "$(ProjectDir)..\..\..\bin"
+xcopy /Y /S /D "$(TargetDir)$(TargetName).lib" "$(ProjectDir)..\..\lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -256,9 +258,10 @@ copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" ..\..\..\bin
-copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
-</Command>
+      <Command>mkdir "$(ProjectDir)..\..\..\bin"
+mkdir "$(ProjectDir)..\..\lib"
+xcopy /Y /S /D "$(TargetPath)" "$(ProjectDir)..\..\..\bin"
+xcopy /Y /S /D "$(TargetDir)$(TargetName).lib" "$(ProjectDir)..\..\lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -312,9 +315,10 @@ copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" ..\..\..\bin
-copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
-</Command>
+      <Command>mkdir "$(ProjectDir)..\..\..\bin"
+mkdir "$(ProjectDir)..\..\lib"
+xcopy /Y /S /D "$(TargetPath)" "$(ProjectDir)..\..\..\bin"
+xcopy /Y /S /D "$(TargetDir)$(TargetName).lib" "$(ProjectDir)..\..\lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -366,9 +370,10 @@ copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" ..\..\..\bin
-copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
-</Command>
+      <Command>mkdir "$(ProjectDir)..\..\..\bin"
+mkdir "$(ProjectDir)..\..\lib"
+xcopy /Y /S /D "$(TargetPath)" "$(ProjectDir)..\..\..\bin"
+xcopy /Y /S /D "$(TargetDir)$(TargetName).lib" "$(ProjectDir)..\..\lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugU|Win32'">
@@ -422,9 +427,10 @@ copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" ..\..\..\bin
-copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
-</Command>
+      <Command>mkdir "$(ProjectDir)..\..\..\bin"
+mkdir "$(ProjectDir)..\..\lib"
+xcopy /Y /S /D "$(TargetPath)" "$(ProjectDir)..\..\..\bin"
+xcopy /Y /S /D "$(TargetDir)$(TargetName).lib" "$(ProjectDir)..\..\lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugU|x64'">
@@ -476,9 +482,10 @@ copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" ..\..\..\bin
-copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
-</Command>
+      <Command>mkdir "$(ProjectDir)..\..\..\bin"
+mkdir "$(ProjectDir)..\..\lib"
+xcopy /Y /S /D "$(TargetPath)" "$(ProjectDir)..\..\..\bin"
+xcopy /Y /S /D "$(TargetDir)$(TargetName).lib" "$(ProjectDir)..\..\lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseU|Win32'">
@@ -531,9 +538,10 @@ copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" ..\..\..\bin
-copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
-</Command>
+      <Command>mkdir "$(ProjectDir)..\..\..\bin"
+mkdir "$(ProjectDir)..\..\lib"
+xcopy /Y /S /D "$(TargetPath)" "$(ProjectDir)..\..\..\bin"
+xcopy /Y /S /D "$(TargetDir)$(TargetName).lib" "$(ProjectDir)..\..\lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseU|x64'">
@@ -584,9 +592,10 @@ copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>copy "$(TargetPath)" ..\..\..\bin
-copy "$(TargetDir)\$(TargetName).lib" ..\..\lib
-</Command>
+      <Command>mkdir "$(ProjectDir)..\..\..\bin"
+mkdir "$(ProjectDir)..\..\lib"
+xcopy /Y /S /D "$(TargetPath)" "$(ProjectDir)..\..\..\bin"
+xcopy /Y /S /D "$(TargetDir)$(TargetName).lib" "$(ProjectDir)..\..\lib"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
